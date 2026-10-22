@@ -20,6 +20,25 @@ human-confirmed yet.** The first real two-PC test (2026-10-21) contradicted seve
 rows; those are now marked ‡ and listed in the next section. Keep this distinction: a green
 automated run is not a statement that a human saw it work.
 
+## Human tests on one PC, 2026-10-22 (fork `luciolo/drg-survivor-coop`)
+
+Observed by a human in the game window and agreed by both coop logs; one PC, two copies; nothing on
+two PCs yet. Details and run-by-run causes: [notes/09-human-tests-2026-10-22.md](notes/09-human-tests-2026-10-22.md).
+
+| Area | Human result before | Fix (fork) | Human result after |
+|---|---|---|---|
+| Start positions | dwarves ~60 m apart (own drop pods) | client joins the host after the pod | together |
+| Own dwarf visible | hidden by `ActivateSkin` on the local controller | snapshot/restore around the call | visible (16 → 10 → 16 renderers) |
+| XP / level-ups | drift → hang at level 2 | mirror credited XP | equal totals, picks released |
+| Overclock screen | hang (counted as a pick) | sync only picks after a new level | no hang over a 5-stage run |
+| Stage 2+ map | client one seed behind | wait for a fresh seed per map | fresh seed logged; human check pending |
+| Rock / decor / red vines / ore veins | partial or none | `CoopRock`, `CoopDecor`, veins via `SetMaterial` | rock and decor much better; veins and red vines not run yet |
+| Enemy aggro on the client | ignored the client | ghost `Entity` + retarget attackers | monsters chase and hit the client |
+| Endless −4 on the client | stale `playerInDamageRange` | clear beyond 3 m | "damage is fine now" |
+| Downed client | regen stood it up, host hung on level-up | heal ignored while down; barrier skips a downed partner | not run yet |
+| Beacons | per instance, client's not on host | `CoopZone` v1 → v2 (pooled, by position) | v1: circle right, minimap wrong; v2 not run yet |
+| Score / secondary objective | client: no number, no secondary | add missing objectives, raise HUD event | both shown; score values still differ |
+
 ## Goal ledger 2026-10-21 (mission-sync goal): red / green / twin
 
 Exploration and measurements: [notes/08-mission-sync.md](notes/08-mission-sync.md). Check: `coop-run.ps1 -Ui -Lobby -EscortCheck [-EscortClient]`

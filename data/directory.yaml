@@ -7181,7 +7181,8 @@
   engine: Unity 6 (IL2CPP)
   project: drg-survivor-coop
   url: https://github.com/Reudo/drg-survivor-coop
-  other_urls: []
+  other_urls:
+  - https://github.com/luciolo/drg-survivor-coop/tree/fix/first-human-test
   kind: mod
   status: prototype
   coop_scope:
@@ -7192,11 +7193,14 @@
   last_activity: 2026-10
   qa: automated
   notes: Host-authoritative BepInEx/LiteNetLib prototype, direct IP only. The automated runs use two
-    clients on ONE PC; the first real two-PC test went badly, so treat it as experimental. Details in
-    games/deep-rock-galactic-survivor/.
+    clients on ONE PC. Nine human runs on one PC (2026-10-22) found and fixed start positions, stage 2+
+    seeds, XP/level-up and overclock hangs, rock/decor sync and enemy aggro on the client (fork branch
+    fix/first-human-test); beacons, ore veins and red vines are built but not yet played; nothing is
+    confirmed on two PCs. Details in games/deep-rock-galactic-survivor/.
   sources:
   - https://github.com/Reudo/drg-survivor-coop
-  checked: '2026-10-21'
+  - https://github.com/luciolo/drg-survivor-coop/tree/fix/first-human-test
+  checked: '2026-10-22'
 - game: Little Nightmares
   year: 2017
   engine: Unreal Engine 4

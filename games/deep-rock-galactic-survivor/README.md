@@ -4,9 +4,9 @@
 |---|---|
 | Engine | Unity 6 (IL2CPP, metadata v39) |
 | Versions tested | Steam build `23854500` (Windows) |
-| Projects | [drg-survivor-coop](https://github.com/Reudo/drg-survivor-coop) (experimental prototype, MIT) |
-| QA level | automated on one PC only; not human-confirmed (first two-PC test contradicted parts, see [STATUS.md](STATUS.md)) |
-| Last updated | 2026-10-21 |
+| Projects | [drg-survivor-coop](https://github.com/Reudo/drg-survivor-coop) (experimental prototype, MIT); fork with fixes from nine human tests: [luciolo/drg-survivor-coop `fix/first-human-test`](https://github.com/luciolo/drg-survivor-coop/tree/fix/first-human-test) |
+| QA level | automated on one PC; nine human runs on one PC on 2026-10-22 ([notes/09](notes/09-human-tests-2026-10-22.md)); nothing human-confirmed on two PCs |
+| Last updated | 2026-10-22 |
 
 > **Current Ist/Soll:** [STATUS.md](STATUS.md) — verified state, known defects, design
 > requirements and the gap table. Detailed working notes: [NOTES.md](NOTES.md) and

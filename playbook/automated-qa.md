@@ -68,6 +68,7 @@ animation checker.
 - **Teleports fail silently.** A test put a player inside a wall and then "found" a bug.
   Assert the precondition (player really is inside the trigger) before asserting the
   result.
+- **A fixture that places the players can hide a placement bug.** The test arena teleported both players to fixed spots, so no automated run saw that each instance lands its own drop pod 60 m from the other's; a human saw it in the first minute. The level check had the same blind spot: 81 samples around the origin, 5 of them rock, while play happened 20-80 m away. Run the canonical start path at least once per suite, and make every check cover the area where play happens ([Deep Rock Galactic: Survivor](../games/deep-rock-galactic-survivor/notes/09-human-tests-2026-10-22.md)).
 - **Check streamed-object ownership.** Validate current-area identity before reusing a trigger; stale registrations can survive a load ([Friend or Foe](../games/spider-man-friend-or-foe/NOTES.md)).
 - **Low memory kills long runs.** Run tests one at a time on a busy PC, in short
   batches, and clean up any game process you started.

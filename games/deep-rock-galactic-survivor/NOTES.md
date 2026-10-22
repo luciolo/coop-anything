@@ -8,6 +8,15 @@ Goal: online co-op (2 players) for a game that ships single-player only.
 > Private operational state lives in `local/` (gitignored): `local/HANDOFF-current.md`
 > (current state/install/playtest) and `local/mod/DrgSurvivorCoop/PLAN.md` (master plan).
 
+## Human tests, 2026-10-22 (one PC)
+
+Nine runs with a human playing host and client on one PC, each followed by a fix, on the fork
+[luciolo/drg-survivor-coop](https://github.com/luciolo/drg-survivor-coop/tree/fix/first-human-test)
+(branch `fix/first-human-test`). Findings, causes, fixes and the game API found:
+[notes/09-human-tests-2026-10-22.md](notes/09-human-tests-2026-10-22.md). Several rows of the table
+below did not hold for a human (start positions, stage 2+ maps, own dwarf invisible, overclock hang,
+rock and decor sync, beacons); read 09 before trusting them.
+
 ## Current state (2026-10-20)
 
 - **Direct-IP/LAN co-op is feature-complete on two instances** and verified by automated
